@@ -1,0 +1,891 @@
+{
+  "contractName": "DecentralBank",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract Rwd",
+          "name": "_rwd",
+          "type": "address"
+        },
+        {
+          "internalType": "contract Tether",
+          "name": "_tether",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "rwd",
+      "outputs": [
+        {
+          "internalType": "contract Rwd",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "tether",
+      "outputs": [
+        {
+          "internalType": "contract Tether",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.17+commit.d19bba13\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract Rwd\",\"name\":\"_rwd\",\"type\":\"address\"},{\"internalType\":\"contract Tether\",\"name\":\"_tether\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"constant\":true,\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"rwd\",\"outputs\":[{\"internalType\":\"contract Rwd\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"tether\",\"outputs\":[{\"internalType\":\"contract Tether\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/src/contracts/DecentralBank.sol\":\"DecentralBank\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/src/contracts/DecentralBank.sol\":{\"keccak256\":\"0x5035f792ced870f74dfb408f07115637e2288e19bbc73aacf9948fdecf28c8f0\",\"urls\":[\"bzz-raw://658951d4ddfcb4b2186898e8354513134d31018f36c52421b3d55914f1f0c62d\",\"dweb:/ipfs/QmVGt31ABqxUQ55yUCJccoWDu9oesW5cxvXuC5JKErvvtD\"]},\"project:/src/contracts/Rwd.sol\":{\"keccak256\":\"0xe5c586df8a5cd4de2a329936801cdbbcb799ba02216cb0fe127130103a59b10c\",\"urls\":[\"bzz-raw://47b100697854d95cc02c8b565865a5b4fe7ee3fa499b9b866677ce6e8f1e1240\",\"dweb:/ipfs/QmWkiwgJQ81aySLDUNRjyXJ1tbnkdJV5KNxQ4rHn6uuEe5\"]},\"project:/src/contracts/Tether.sol\":{\"keccak256\":\"0x30f89f7fb492a590cd76f086936242244060f7c444e3405151cec188c196b0b0\",\"urls\":[\"bzz-raw://11610c058e89167fed224afca9f0c5bb014849fcb35f523a45aee201ff30e329\",\"dweb:/ipfs/QmQEehg9gkaRpWx7mTbtequrS9atuh6NsgPq9NsMN5zXtX\"]}},\"version\":1}",
+  "bytecode": "0x60806040526040518060400160405280600e81526020017f446563656e7472616c2042616e6b0000000000000000000000000000000000008152506000908051906020019061004f929190610123565b5034801561005c57600080fd5b506040516104ce3803806104ce8339818101604052604081101561007f57600080fd5b81019080805190602001909291908051906020019092919050505081600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506101c8565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f1061016457805160ff1916838001178555610192565b82800160010185558215610192579182015b82811115610191578251825591602001919060010190610176565b5b50905061019f91906101a3565b5090565b6101c591905b808211156101c15760008160009055506001016101a9565b5090565b90565b6102f7806101d76000396000f3fe608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780631a8972d3146100d45780635efc071a1461011e5780638da5cb5b14610168575b600080fd5b6100596101b2565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100dc610250565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610126610276565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61017061029c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102485780601f1061021d57610100808354040283529160200191610248565b820191906000526020600020905b81548152906001019060200180831161022b57829003601f168201915b505050505081565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820e0e92409fddb9a303f037e88ce65102225bc44e1181e47136937f88704eeedad64736f6c63430005110032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061004c5760003560e01c806306fdde03146100515780631a8972d3146100d45780635efc071a1461011e5780638da5cb5b14610168575b600080fd5b6100596101b2565b6040518080602001828103825283818151815260200191508051906020019080838360005b8381101561009957808201518184015260208101905061007e565b50505050905090810190601f1680156100c65780820380516001836020036101000a031916815260200191505b509250505060405180910390f35b6100dc610250565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b610126610276565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61017061029c565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b60008054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156102485780601f1061021d57610100808354040283529160200191610248565b820191906000526020600020905b81548152906001019060200180831161022b57829003601f168201915b505050505081565b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff168156fea265627a7a72315820e0e92409fddb9a303f037e88ce65102225bc44e1181e47136937f88704eeedad64736f6c63430005110032",
+  "sourceMap": "74:241:0:-;;;104:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;223:89;8:9:-1;5:2;;;30:1;27;20:12;5:2;223:89:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;223:89:0;;;;;;;;;;;;;;;;;;;;;;;;;281:4;275:3;;:10;;;;;;;;;;;;;;;;;;301:7;292:6;;:16;;;;;;;;;;;;;;;;;;223:89;;74:241;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "74:241:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;74:241:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;104:37;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;104:37:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;202:14;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;175:20;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;148;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;104:37;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;202:14::-;;;;;;;;;;;;;:::o;175:20::-;;;;;;;;;;;;;:::o;148:::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity ^0.5.0;\r\n\r\nimport './Rwd.sol';\r\nimport './Tether.sol';\r\n\r\ncontract DecentralBank {\r\n    string public name = \"Decentral Bank\";\r\n    address public owner;\r\n    Tether public tether;\r\n    Rwd public rwd;\r\n\r\n\r\nconstructor(Rwd _rwd, Tether _tether) public {\r\n    rwd = _rwd;\r\n    tether = _tether;\r\n}\r\n}",
+  "sourcePath": "C:\\Users\\itama\\Documents\\defiApp\\defi-staking-app-starter\\src\\contracts\\DecentralBank.sol",
+  "ast": {
+    "absolutePath": "project:/src/contracts/DecentralBank.sol",
+    "exportedSymbols": {
+      "DecentralBank": [
+        29
+      ]
+    },
+    "id": 30,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "absolutePath": "project:/src/contracts/Rwd.sol",
+        "file": "./Rwd.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 30,
+        "sourceUnit": 268,
+        "src": "27:19:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "project:/src/contracts/Tether.sol",
+        "file": "./Tether.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 30,
+        "sourceUnit": 449,
+        "src": "48:22:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 29,
+        "linearizedBaseContracts": [
+          29
+        ],
+        "name": "DecentralBank",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 6,
+            "name": "name",
+            "nodeType": "VariableDeclaration",
+            "scope": 29,
+            "src": "104:37:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_string_storage",
+              "typeString": "string"
+            },
+            "typeName": {
+              "id": 4,
+              "name": "string",
+              "nodeType": "ElementaryTypeName",
+              "src": "104:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_string_storage_ptr",
+                "typeString": "string"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "446563656e7472616c2042616e6b",
+              "id": 5,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "string",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "125:16:0",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_stringliteral_517b48598670b90dc9ba54628155bce1ee7091baf20941f742e78f9b9a2bb10f",
+                "typeString": "literal_string \"Decentral Bank\""
+              },
+              "value": "Decentral Bank"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 8,
+            "name": "owner",
+            "nodeType": "VariableDeclaration",
+            "scope": 29,
+            "src": "148:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 7,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "148:7:0",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 10,
+            "name": "tether",
+            "nodeType": "VariableDeclaration",
+            "scope": 29,
+            "src": "175:20:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Tether_$448",
+              "typeString": "contract Tether"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 9,
+              "name": "Tether",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 448,
+              "src": "175:6:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Tether_$448",
+                "typeString": "contract Tether"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 12,
+            "name": "rwd",
+            "nodeType": "VariableDeclaration",
+            "scope": 29,
+            "src": "202:14:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_contract$_Rwd_$267",
+              "typeString": "contract Rwd"
+            },
+            "typeName": {
+              "contractScope": null,
+              "id": 11,
+              "name": "Rwd",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 267,
+              "src": "202:3:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Rwd_$267",
+                "typeString": "contract Rwd"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 27,
+              "nodeType": "Block",
+              "src": "268:44:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 21,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 19,
+                      "name": "rwd",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 12,
+                      "src": "275:3:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Rwd_$267",
+                        "typeString": "contract Rwd"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 20,
+                      "name": "_rwd",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14,
+                      "src": "281:4:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Rwd_$267",
+                        "typeString": "contract Rwd"
+                      }
+                    },
+                    "src": "275:10:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Rwd_$267",
+                      "typeString": "contract Rwd"
+                    }
+                  },
+                  "id": 22,
+                  "nodeType": "ExpressionStatement",
+                  "src": "275:10:0"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 25,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 23,
+                      "name": "tether",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "292:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Tether_$448",
+                        "typeString": "contract Tether"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 24,
+                      "name": "_tether",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 16,
+                      "src": "301:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Tether_$448",
+                        "typeString": "contract Tether"
+                      }
+                    },
+                    "src": "292:16:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Tether_$448",
+                      "typeString": "contract Tether"
+                    }
+                  },
+                  "id": 26,
+                  "nodeType": "ExpressionStatement",
+                  "src": "292:16:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 28,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 17,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14,
+                  "name": "_rwd",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "235:8:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Rwd_$267",
+                    "typeString": "contract Rwd"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 13,
+                    "name": "Rwd",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 267,
+                    "src": "235:3:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Rwd_$267",
+                      "typeString": "contract Rwd"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 16,
+                  "name": "_tether",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 28,
+                  "src": "245:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_contract$_Tether_$448",
+                    "typeString": "contract Tether"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 15,
+                    "name": "Tether",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 448,
+                    "src": "245:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Tether_$448",
+                      "typeString": "contract Tether"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "234:26:0"
+            },
+            "returnParameters": {
+              "id": 18,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "268:0:0"
+            },
+            "scope": 29,
+            "src": "223:89:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 30,
+        "src": "74:241:0"
+      }
+    ],
+    "src": "0:315:0"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/src/contracts/DecentralBank.sol",
+      "exportedSymbols": {
+        "DecentralBank": [
+          29
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 1,
+        "name": "PragmaDirective",
+        "src": "0:23:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 268,
+          "absolutePath": "project:/src/contracts/Rwd.sol",
+          "file": "./Rwd.sol",
+          "scope": 30,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 2,
+        "name": "ImportDirective",
+        "src": "27:19:0"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 449,
+          "absolutePath": "project:/src/contracts/Tether.sol",
+          "file": "./Tether.sol",
+          "scope": 30,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 3,
+        "name": "ImportDirective",
+        "src": "48:22:0"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": null,
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            29
+          ],
+          "name": "DecentralBank",
+          "scope": 30
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": false,
+              "name": "name",
+              "scope": 29,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "string",
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "string",
+                  "type": "string"
+                },
+                "id": 4,
+                "name": "ElementaryTypeName",
+                "src": "104:6:0"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "hexvalue": "446563656e7472616c2042616e6b",
+                  "isConstant": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "subdenomination": null,
+                  "token": "string",
+                  "type": "literal_string \"Decentral Bank\"",
+                  "value": "Decentral Bank"
+                },
+                "id": 5,
+                "name": "Literal",
+                "src": "125:16:0"
+              }
+            ],
+            "id": 6,
+            "name": "VariableDeclaration",
+            "src": "104:37:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "owner",
+              "scope": 29,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "address",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "address",
+                  "stateMutability": "nonpayable",
+                  "type": "address"
+                },
+                "id": 7,
+                "name": "ElementaryTypeName",
+                "src": "148:7:0"
+              }
+            ],
+            "id": 8,
+            "name": "VariableDeclaration",
+            "src": "148:20:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "tether",
+              "scope": 29,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Tether",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Tether",
+                  "referencedDeclaration": 448,
+                  "type": "contract Tether"
+                },
+                "id": 9,
+                "name": "UserDefinedTypeName",
+                "src": "175:6:0"
+              }
+            ],
+            "id": 10,
+            "name": "VariableDeclaration",
+            "src": "175:20:0"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "name": "rwd",
+              "scope": 29,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "contract Rwd",
+              "value": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "contractScope": null,
+                  "name": "Rwd",
+                  "referencedDeclaration": 267,
+                  "type": "contract Rwd"
+                },
+                "id": 11,
+                "name": "UserDefinedTypeName",
+                "src": "202:3:0"
+              }
+            ],
+            "id": 12,
+            "name": "VariableDeclaration",
+            "src": "202:14:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": true,
+              "kind": "constructor",
+              "modifiers": [
+                null
+              ],
+              "name": "",
+              "scope": 29,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_rwd",
+                      "scope": 28,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Rwd",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Rwd",
+                          "referencedDeclaration": 267,
+                          "type": "contract Rwd"
+                        },
+                        "id": 13,
+                        "name": "UserDefinedTypeName",
+                        "src": "235:3:0"
+                      }
+                    ],
+                    "id": 14,
+                    "name": "VariableDeclaration",
+                    "src": "235:8:0"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "_tether",
+                      "scope": 28,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract Tether",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "Tether",
+                          "referencedDeclaration": 448,
+                          "type": "contract Tether"
+                        },
+                        "id": 15,
+                        "name": "UserDefinedTypeName",
+                        "src": "245:6:0"
+                      }
+                    ],
+                    "id": 16,
+                    "name": "VariableDeclaration",
+                    "src": "245:14:0"
+                  }
+                ],
+                "id": 17,
+                "name": "ParameterList",
+                "src": "234:26:0"
+              },
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 18,
+                "name": "ParameterList",
+                "src": "268:0:0"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract Rwd"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 12,
+                              "type": "contract Rwd",
+                              "value": "rwd"
+                            },
+                            "id": 19,
+                            "name": "Identifier",
+                            "src": "275:3:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 14,
+                              "type": "contract Rwd",
+                              "value": "_rwd"
+                            },
+                            "id": 20,
+                            "name": "Identifier",
+                            "src": "281:4:0"
+                          }
+                        ],
+                        "id": 21,
+                        "name": "Assignment",
+                        "src": "275:10:0"
+                      }
+                    ],
+                    "id": 22,
+                    "name": "ExpressionStatement",
+                    "src": "275:10:0"
+                  },
+                  {
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "=",
+                          "type": "contract Tether"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 10,
+                              "type": "contract Tether",
+                              "value": "tether"
+                            },
+                            "id": 23,
+                            "name": "Identifier",
+                            "src": "292:6:0"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 16,
+                              "type": "contract Tether",
+                              "value": "_tether"
+                            },
+                            "id": 24,
+                            "name": "Identifier",
+                            "src": "301:7:0"
+                          }
+                        ],
+                        "id": 25,
+                        "name": "Assignment",
+                        "src": "292:16:0"
+                      }
+                    ],
+                    "id": 26,
+                    "name": "ExpressionStatement",
+                    "src": "292:16:0"
+                  }
+                ],
+                "id": 27,
+                "name": "Block",
+                "src": "268:44:0"
+              }
+            ],
+            "id": 28,
+            "name": "FunctionDefinition",
+            "src": "223:89:0"
+          }
+        ],
+        "id": 29,
+        "name": "ContractDefinition",
+        "src": "74:241:0"
+      }
+    ],
+    "id": 30,
+    "name": "SourceUnit",
+    "src": "0:315:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.17+commit.d19bba13.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0xee58FC045A28751C13A099D9BCb1CAae99D80853",
+      "transactionHash": "0x1d1eea6c90f34e791b70309ca2a3dd8ea7a05bc6287f988f29cf6cc19f46d571"
+    }
+  },
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-03-27T12:49:23.859Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
