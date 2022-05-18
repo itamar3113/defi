@@ -45,7 +45,7 @@ contract DecentralBank {
         }
     }
 
-    function unStakeTokens() public {
+    function unstakeTokens() public {
         uint256 balance = stakingBalance[msg.sender];
         require(balance > 0, "balance can't be zero");
         tether.transfer(msg.sender, balance);
